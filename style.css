@@ -1,0 +1,208 @@
+body {
+  font-family: "raleway", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #17171a;
+  -webkit-transition: 0.3s ease-in-out !important;
+  transition: 0.3s ease-in-out !important;
+}
+
+.hero-fullscreen {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hero-fullscreen-FIX {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
+}
+
+#profilePicture,
+#profilePicture img {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  display: block;
+  margin: 40px auto 20px;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#userName {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "raleway", sans-serif;
+  line-height: 1.25;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0px 2px rgba(0, 0, 0, 0.44);
+}
+
+#links {
+  max-width: 600px;
+  width: auto;
+  display: block;
+  margin: 27px auto;
+}
+
+.link {
+  position: relative;
+  background: #292a26;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
+  padding: 10px; /* 17px */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 300ms ease-in-out;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.44);
+}
+
+@media (hover: hover) {
+  .link:hover {
+    background: #dd5024;
+    color: white;
+  }
+}
+
+/*-------------------------popup------------------------*/
+/* credits: https://www.youtube.com/watch?v=lAS2glU0xlc */
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+.popup {
+  position: relative;
+  top: -43%;
+  /* right: -100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  /* max-height: 500px; */
+  width: auto;
+  height: auto;
+  margin: 56px;
+  background-color: black;
+  /* transform: rotate(32deg); */
+  transform: scale(0);
+  transition: 0.5s ease-in-out;
+}
+
+.popup-photo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.overlay:target .popup {
+  transform: scale(1);
+  top: 0;
+  /* right: 0; */
+  /* transform: rotate(0); */
+}
+
+.popup-close {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  border-radius: 100%;
+  background-color: black;
+  z-index: 4;
+  color: white;
+  line-height: 2.7rem;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .popup-close:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.popup-close:active {
+  background-color: var(--accentColor);
+  color: var(--bgColor);
+}
